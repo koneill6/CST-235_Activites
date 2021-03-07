@@ -13,9 +13,9 @@
 	
 		<ui:define name="content">
 			<h:form>
-			First Name:<h:inputText value="#{user.firstName}"/>
-			Last Name:<h:inputText value="#{user.lastName}"/>
-			<h:commandButton action="#{formController.onSubmit()}" value="Submit"/>
+			First Name:<h:inputText value="#{user.firstName}"/><br/>
+			Last Name:<h:inputText value="#{user.lastName}"/><br/>
+			<h:commandButton action="#{formController.onSubmit()}" value="Submit"/><br/>
 			<h:commandButton action="#{formController.onFlash(user)}" value="Flash" />
 
 			</h:form>
