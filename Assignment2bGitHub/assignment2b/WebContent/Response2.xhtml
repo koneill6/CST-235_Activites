@@ -7,8 +7,9 @@
 
 <body>
 	<h1>Response Page</h1>
-	<p>Hello #{flash.user.firstName}, I hope you are doing well.</p>
-	<p>I believe your last name is #{flash.user.lastName}.</p>
+	<p>#{flash.user.firstName}, your order was processed!</p>
+	<h:button action="#{formController.goHome()}" value="TestForm"></h:button>
+	
 
 </body>
 </html>

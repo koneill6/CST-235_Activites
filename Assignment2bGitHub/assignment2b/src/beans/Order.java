@@ -1,5 +1,14 @@
 package beans;
 
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="order")
 public class Order {
 	String ordernumber = "";
 	String productname = "";
@@ -7,6 +16,11 @@ public class Order {
 	int quantity = 0;
 	
 	
+	public Order() {
+		super();
+	}
+
+
 	public Order(String ordernumber, String productname, float price, int quantity) {
 		super();
 		this.ordernumber = ordernumber;

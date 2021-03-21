@@ -1,5 +1,6 @@
 package business;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
 
 import beans.Order;
+import controllers.DatabaseService;
 
 @Stateless
 @Local(OrderBusinessInterface.class)
@@ -15,6 +17,7 @@ import beans.Order;
 public class AnotherOrdersBusinessService implements OrderBusinessInterface {
 
 	List<Order> orders = new ArrayList<Order>();
+	DatabaseService ds = new DatabaseService();
 	
 	@Override
 	public void test() {
@@ -41,6 +44,16 @@ public class AnotherOrdersBusinessService implements OrderBusinessInterface {
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
 		
+	}
+
+	@Override
+	public Order getOne(int id) throws SQLException {
+		return ds.readOne(id);
+	}
+
+	@Override
+	public List<Order> searchFor(String name) throws SQLException {
+		return ds.searchFor(name);
 	}
 
 }

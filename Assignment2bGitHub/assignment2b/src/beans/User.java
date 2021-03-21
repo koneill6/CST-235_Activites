@@ -15,12 +15,12 @@ public class User {
 
 		@NotNull(message="First name cannot be null")
 		@NotEmpty(message="First name cannot be empty")
-		@Size(min=5, max=15, message="First name must be between 5-15 characters")
+		@Size(min=1, max=15, message="First name must be between 5-15 characters")
 		private String firstName;
 		
 		@NotNull(message="Last name cannot be null")
 		@NotEmpty(message="Last name cannot be empty")
-		@Size(min=5, max=15, message="Last name must be between 5-15 characters")
+		@Size(min=1, max=15, message="Last name must be between 5-15 characters")
 		private String lastName;
 		
 		public User() {
